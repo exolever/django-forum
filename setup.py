@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 
 def get_version(*file_paths):
-    """Retrieves the version from ratings/__init__.py"""
+    """Retrieves the version from forum/__init__.py"""
     filename = os.path.join(os.path.dirname(__file__), *file_paths)
     version_file = open(filename).read()
     version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
@@ -17,7 +17,7 @@ def get_version(*file_paths):
     raise RuntimeError('Unable to find version string.')
 
 
-version = get_version("ratings", "__init__.py")
+version = get_version("forum", "__init__.py")
 
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
