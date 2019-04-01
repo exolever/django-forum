@@ -8,7 +8,7 @@ To use forum in a project, add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'forum.apps.ForumConfig',
+        'forum',
         ...
     )
 
@@ -16,11 +16,11 @@ Add forum's URL patterns:
 
 .. code-block:: python
 
-    from forum import urls as forum_urls
+    from forum import urls
 
 
     urlpatterns = [
         ...
-        url(r'^', include(forum_urls)),
+        url(r'^', include(forum.urls)),
         ...
     ]

@@ -1,5 +1,5 @@
 =============================
-django-forum
+django-forum-app
 =============================
 
 .. image:: https://badge.fury.io/py/django-forum-app.svg
@@ -32,7 +32,7 @@ Quickstart
 
 Install django-forum::
 
-    pip install django-forum
+    pip install django-forum-app
 
 Add it to your `INSTALLED_APPS`:
 
