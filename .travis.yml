@@ -1,39 +1,25 @@
-# Config file for automatic testing at travis-ci.org
 sudo: false
-
 language: python
-
 cache: pip
-
 python: 3.6
-
 matrix:
   fast_finish: true
-
-# Addons
 addons:
   sonarcloud:
-    organization: "openexo"
-
-# install dependencies
+    organization: openexo
 install: pip install -r requirements_test.txt
-
-# run tests on every Python version with tox
-script: 
+script:
   - tox
   - sonar-scanner
-
-# pypi deployment
 deploy:
   provider: pypi
-  distributions: "sdist bdist_wheel"
+  distributions: sdist bdist_wheel
   user: marfyl
-  password: 
-    secure: "BJBrMbhkfR82jHVlRR5z3u80qY5U3TSmRZqY++Ra4EZV1SiW3rf/aCRNo5p4mOnGRBqs4jTiCXHa4EtAMz7G0hWWFbhyjeTYkn/znm0MN/p8UwqnljgJATlV4s3tuAlqvqaD7c5SSmGzCm7okQcXhObQ9lRFVYRhQ2plQsuFlIrADjqe1yntG8ILolcURXjN4imMDHOBpsrE/WxRk/DpCYa84Oe6aAMYCe8+MF92zhziI/gN1/m0SE5KYYC/xX6FoNCVX3Zk56EnZ6ATIaqXVKY8fnT7gCBYIkEydEGxVCAyvBqmfHKYXiihJGdsqr1o7XwgdxGtBfcqS0dsNTXr+APRf8+lO6N58/07iQFhTJLgZV8RwjtUEeGXb4EqdhBCII5sOXucQgntpOic49aOpK9McBvcNok5V+BBMEIeChT1+uFAq1Cq8Hv2dx1ywoFs/qDSU9+PpWRLu5YlPnJGytpMMgVkvKp+XMhUoraZ1GgBKcQM62MAndHiPNzB2qJWbDXd5KRk2WJxDAHya0j2cB9pslQQitf291JX+hCABEjcJJzq5L31JkZR4Zr06sR1ohdoGOIRcdDDnaIKS/re5ypwUp4lN6SuhGgY+b1/Tv/s3OoSXJs+0SAMfWE69FTUh+tTcrKTSoAAMWM039YbRgYreiAK7BcKoVKs5FRML+4="
+  password:
+    secure: wXkf9+NkNXi2Zz8n/1WOR+At6BgoKcuKv26FCcwy1b4Aq317MqOPxxU5uz2Y+JYKCoQsLkSBRlpUMIG/Q5Ael+QcMRRRgbLXNqR1crNQpTxuRN3kpwOiV7e7k48KfSlzmCgY0LEi5JhyB8fXbJ0uQQ2zk7/8TLBUjv06fEHX7rGCm8eofDLSJz0QAH9kXHPlgqsC03iIc8Z548A+TPM75RrhfVsiiaZ1MruIal0ba8vaQek/bJ9HvalfE+/10iXeGTdYz26aWn+KQ3M1alsUPJ2K+oA+/pyMuQkeBkVO5/PYJ5i9alWTtMInq5cwVPAAiHvBw/qJp3A/CzWnnBWY9HWqssztyOOkGgITzMr4HYSeEJVy5ShW3amGXL/tVPzr/s4PIu5bkXceNxqWH9c72HNZ0wCXNuiIl8p+mqRMl2tTFL2KUgQvrAO2ReSg873QGPnUCEaqWGRjqeHa8oNYiN09z4h/HeKRHXoiYK1iL3DOf+gBycdcJvcgV7DVe/itrZb7nngD+QIFK26xRfhtANR8VYXpVSQa+grdguTsS1VV1sw9cKSG2N+7FCO4E2SYFNivQm9TmwHLXgzR3hQYN6Fsm5y2YdqEGjIgS9n/zH5IZXiWFxT+Kkp25+gNHufJPLzEj/6S7h/INCvlL2vj5THXuXz3EOr+2UZykakeC8U=
   on:
     tags: true
-    repo: exolever/django-forum
+    repo: exolever/django-forum-app
     python: 3.6
-
 after_success:
   - codecov

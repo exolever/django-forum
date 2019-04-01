@@ -23,16 +23,16 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
-    name='django-forum',
+    name='django-forum-app',
     version=version,
-    description='Implement forum for Django',
+    description='Implement forum app for Django',
     long_description=readme,
     author='marfyl',
     author_email='marfyl.dev@gmail.com',
     url='https://github.com/exolever/django-forum',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['django-appconf', 'django-model-utils'],
+    install_requires=['django-appconf', 'django-model-utils', 'django-stats-redis'],
     license="MIT",
     zip_safe=False,
     keywords=['python', 'django', 'forum'],
